@@ -1,0 +1,33 @@
+{
+  "name": "anonymous-object-handler",
+  "version": "1.0.0",
+  "description": "A package containing functions that handles object strucutres and perform operations without knowing the object properties",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha **/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mdhaker/object-handler.git"
+  },
+  "keywords": [
+    "js-object",
+    "mongo-query",
+    "object-handler",
+    "object-mapper",
+    "object-properties",
+    "object-values",
+    "assign-deep",
+    "object-assign"
+  ],
+  "author": "MDA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mdhaker/object-handler/issues"
+  },
+  "homepage": "https://github.com/Mdhaker/object-handler#readme",
+  "devDependencies": {
+    "chai": "4.2.0",
+    "mocha": "6.0.2"
+  }
+}
