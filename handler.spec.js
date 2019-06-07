@@ -1,4 +1,4 @@
-const {deepAssign} = require('./handler');
+const {deepAssign,stringifyValues} = require('./handler');
 var expect = require('chai').expect;
 
   describe('deepAssign', function() {
@@ -10,6 +10,15 @@ var expect = require('chai').expect;
       expect(objectToReturn).to.have.property('key2')
                             .to.be.an('object').and.to.have.property('key21').to.equal('foo');
       expect(objectToReturn['key2']['key22']).to.be.an('object').and.to.have.property('key221').and.to.equal('xyzw');                      
+                                                
+    });
+  });
+
+  describe('stringifyValues', function() {
+    let object = {key1:"foo",key2:{key21:2,key22:{key221:200}}};
+    it('should return a object containing values of type string', function() {
+      let objectToReturn = stringifyValues(object);
+     console.log(objectToReturn); 
                                                 
     });
   });

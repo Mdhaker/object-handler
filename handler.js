@@ -81,7 +81,7 @@ var mapObject = (object,rootPath="")=>{
     debugger
     Object.keys(object).forEach( (key,index) => {
         let path = rootPath ? `${rootPath}.${key}`:key;
-        if(typeof object[key] =='object' && !(object[key] instanceof Date) && !ObjectID.isValid(object[key]) && !(object[key] instanceof Array))
+        if(typeof object[key] =='object' && !(object[key] instanceof Date) && !(object[key] instanceof Array))
             {
                 
                 resultObject = Object.assign(resultObject,mapObject(object[key],path));
@@ -143,12 +143,25 @@ var sumObjectsByPaths = (object1,object2,paths) =>{
     })
     return unMapObject(object1);
 }
+
+/**
+ * takes an object and make all his values string
+ * @param {object} object target objet
+ */
+var stringifyValues = (object)=>{
+    let mappedObj = mapObject(object);
+    Object.keys(mappedObj).forEach(key=>{
+        mappedObj[key] = String(mappedObj[key]);
+    })
+    return unMapObject(mappedObj);
+}
 module.exports = {
     getValueByPath,
     setObjectValueByPath,
     deepAssign,
     sumObjects,
     mapObject,
-    unMapObject
+    unMapObject,
+    stringifyValues
 }
 
