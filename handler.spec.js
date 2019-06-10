@@ -16,7 +16,14 @@ var expect = require('chai').expect;
 
   describe('stringifyValues', function() {
     let object = {key1:"foo",key2:{key21:2,key22:{key221:200}}};
-    it('should return a object containing values of type string', function() {
+    it('should return an object containing values of type string', function() {
+      let objectToReturn = stringifyValues(object);
+     console.log(objectToReturn); 
+                                                
+    });
+
+    object = {key1:"foo",key2:{key21:2,key22:{key221:null}}};
+    it('should return an object containing values of type string', function() {
       let objectToReturn = stringifyValues(object);
      console.log(objectToReturn); 
                                                 

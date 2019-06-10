@@ -78,7 +78,7 @@ var setObjectValueByPath = (object,path,value) =>
  */
 var mapObject = (object,rootPath="")=>{
     let resultObject = {};
-    debugger
+    if (object == null) object = {};
     Object.keys(object).forEach( (key,index) => {
         let path = rootPath ? `${rootPath}.${key}`:key;
         if(typeof object[key] =='object' && !(object[key] instanceof Date) && !(object[key] instanceof Array))
