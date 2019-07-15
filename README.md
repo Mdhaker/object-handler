@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm i -S anonymous-object-handler
+npm i anonymous-object-handler
 ```
 
 ## Usage
