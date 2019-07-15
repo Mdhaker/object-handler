@@ -97,5 +97,5 @@ return the same obj structure mentioned before
 
 [MIT](http://vjpr.mit-license.org)
 
-[npm-image]: https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/JSON-LD.svg/512px-JSON-LD.svg.png
+[npm-image]: https://camo.githubusercontent.com/0fe7b138152a3825e7516c850de315512f6052ae/68747470733a2f2f63646e2e737667706f726e2e636f6d2f6c6f676f732f737761676765722e737667
 [npm-url]: https://www.npmjs.com/package/anonymous-object-handler
