@@ -27,8 +27,9 @@ let obj = {
 };
 
 aoh.getValueByPath(obj,"key1.key11.key112")  // returns "bar"
+
 aoh.setValueBypath(obj,"key1.key11.key113.key1131","baz"); 
-/**
+/** return
 {
    "key1":{
       "key11":{
@@ -44,7 +45,51 @@ aoh.setValueBypath(obj,"key1.key11.key113.key1131","baz");
    "key3":"value3"
 };
 **/
+let obj2 = {
+   "key1":{
+      "key11":{
+         "key111":"foo",
+         "key112":"baz",
+         "key113" : {
+             "key1131" : {"key11311":"value11311"}
+         }
+      }
+};
 
+aoh.deepAssign(obj,obj2);
+/** return
+{
+   "key1":{
+      "key11":{
+         "key111":"foo",
+         "key112":"baz",
+         "key113" : {
+             "key1131" : {"key11311":"value11311"}
+         }
+      },
+      "key12":"lorem"
+   },
+   "key2":"value2",
+   "key3":"value3"
+};
+**/
+
+/** This is the key function to all the package **/
+
+aoh.mapObject(obj);
+/** return
+{
+   "key1.key11.key111":"foo",
+   "key1.key11.key112":"bar",
+    "key1.key12":"lorem",
+    "key2":"value2",
+    "key3":"value3"
+};
+**/
+aoh.unMapObject(obj);
+/**
+return the same obj structure mentioned before
+**/
 
 ```
 
@@ -52,9 +97,5 @@ aoh.setValueBypath(obj,"key1.key11.key113.key1131","baz");
 
 [MIT](http://vjpr.mit-license.org)
 
-[npm-image]: https://img.shields.io/npm/v/live-xxx.svg
+[npm-image]: https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/JSON-LD.svg/512px-JSON-LD.svg.png
 [npm-url]: https://www.npmjs.com/package/anonymous-object-handler
-[travis-image]: https://img.shields.io/travis/live-js/live-xxx/master.svg
-[travis-url]: https://travis-ci.org/live-js/live-xxx
-[coveralls-image]: https://img.shields.io/coveralls/live-js/live-xxx/master.svg
-[coveralls-url]: https://coveralls.io/r/live-js/live-xxx?branch=master
